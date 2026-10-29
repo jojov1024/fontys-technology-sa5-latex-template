@@ -1,0 +1,38 @@
+% Front page. All text comes from metadata.tex -- nothing to edit here.
+\thispagestyle{empty}
+\def\lskip{\vspace{0.5cm}}
+
+% --- Logos ---
+\begin{minipage}[b]{0.45\linewidth}
+    \includegraphics[height=2.5cm, width=5cm, keepaspectratio]{Figures/99_Logos/Fontys Logo.png}
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.45\linewidth}
+    \raggedleft
+    % Second (company/institute) logo, only shown if \companyLogo is set in metadata.tex
+    \ifdefempty{\companyLogo}{}{\includegraphics[height=1.5cm, width=6cm, keepaspectratio]{\companyLogo}}
+\end{minipage}
+
+\vspace{2cm}
+
+\begin{center}
+    \large\sc \instituteName \\
+    \normalsize{\studyProgram}
+\end{center}
+
+\begin{center}
+    \periodStart\ -- \periodEnd \\
+    \lskip
+    \reportType
+    \lskip
+
+    Presented by \lskip
+
+    \textbf{\large \studentName} \lskip
+
+    On \presentationDate \lskip\lskip
+\end{center}
+
+\begin{center}
+    {\huge \reportTitle}\\[1em]
+\end{center}

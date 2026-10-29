@@ -1,0 +1,93 @@
+% Reference examples for the most common source types in a research
+% report. Copy the entry you need into bibliography.bib and fill it in.
+%
+% Two things to watch out for:
+%   1. Every entry needs a UNIQUE key (the word right after the "{",
+%      e.g. "jansen2025"). Two entries with the same key make BibTeX
+%      silently drop one of them. A common convention: first author's
+%      surname + year.
+%   2. Comments (like this one) only work BETWEEN entries, not inside
+%      them -- a "%" inside an entry breaks it, so field explanations
+%      are listed here instead of next to the fields themselves.
+%
+% Cite any entry in your report with \cite{key}, e.g. \cite{jansen2025}.
+
+% --- Journal article -------------------------------------------------
+% Required: author, title, journal, year
+% Optional: volume, number, pages, doi
+@article{jansen2025,
+  author  = {Author Name},
+  title   = {Title of the article},
+  journal = {Journal Name},
+  year    = {2025},
+  volume  = {12},
+  number  = {3},
+  pages   = {45--56},
+  doi     = {10.1234/example},
+}
+
+% --- Book --------------------------------------------------------------
+% Required: author, title, publisher, year
+% Optional: edition, address
+@book{degroot2025,
+  author    = {Author Name},
+  title     = {Book Title},
+  publisher = {Publisher Name},
+  year      = {2025},
+  edition   = {2nd},
+  address   = {City},
+}
+
+% --- Chapter in a book --------------------------------------------------
+% Required: author, title, booktitle, publisher, year
+% Optional: pages
+@inbook{bakker2025,
+  author    = {Author Name},
+  title     = {Chapter Title},
+  booktitle = {Book Title},
+  publisher = {Publisher Name},
+  year      = {2025},
+  pages     = {23--45},
+}
+
+% --- Conference paper ----------------------------------------------------
+% Required: author, title, booktitle, year
+% Optional: pages, publisher, doi
+@inproceedings{vermeulen2025,
+  author    = {Author Name},
+  title     = {Paper Title},
+  booktitle = {Proceedings of Conference Name},
+  year      = {2025},
+  pages     = {12--18},
+  publisher = {Publisher},
+  doi       = {10.1234/example},
+}
+
+% --- Master's thesis -----------------------------------------------------
+% Required: author, title, school, year
+@mastersthesis{timmermans2025,
+  author = {Author Name},
+  title  = {Thesis Title},
+  school = {University Name},
+  year   = {2025},
+}
+
+% --- PhD thesis -----------------------------------------------------------
+% Required: author, title, school, year
+@phdthesis{devries2025,
+  author = {Author Name},
+  title  = {Thesis Title},
+  school = {University Name},
+  year   = {2025},
+}
+
+% --- Technical report -------------------------------------------------------
+% Required: author, title, institution, year
+% Optional: number
+@techreport{smit2025,
+  author      = {Author Name},
+  title       = {Report Title},
+  institution = {Institution Name},
+  year        = {2025},
+  number      = {TR-1234},
+}

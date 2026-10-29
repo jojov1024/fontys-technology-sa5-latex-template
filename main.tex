@@ -1,0 +1,67 @@
+% =====================================================================
+%  Switch -- set before submitting:
+%    \notestrue  : \todo notes visible while writing
+%    \notesfalse : all notes removed (use this for submission)
+% =====================================================================
+\newif\ifnotes
+\notestrue
+
+\ifnotes\else\PassOptionsToPackage{disable}{todonotes}\fi
+\documentclass{thesisreport}
+
+\input{metadata}   % <-- fill in your report details here
+
+\hfuzz=10pt
+
+% \fig{path}{width}{caption}{label}: includes the figure if the file
+% exists, otherwise a framed placeholder, so the report always compiles.
+\newcommand{\fig}[4]{%
+  \begin{figure}[htbp]
+    \centering
+    \IfFileExists{#1}{\includegraphics[width=#2\textwidth]{#1}}{%
+      \fbox{\parbox[c][0.3\textwidth][c]{#2\textwidth}{\centering\small
+        Figure not yet available:\\ \texttt{\detokenize{#1}}}}}%
+    \caption{#3}\label{#4}%
+  \end{figure}}
+
+\begin{document}
+
+\include{frontpage}
+\include{infopage}
+
+% Front matter: roman page numbers (Fontys guideline)
+\cleardoublepage
+\pagenumbering{roman}
+\include{Sections/01_Summary}
+\include{Sections/02_Acknowledgments}
+\tableofcontents
+
+% Main matter: arabic page numbers from the introduction
+% (Fontys: max. 35 pages from introduction up to and including the
+% bibliography)
+\cleardoublepage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\include{Sections/03_Introduction}
+\include{Sections/04_Theory}
+\include{Sections/05_Research_method}
+\include{Sections/06_Results}
+\include{Sections/07_Discussion}
+\include{Sections/08_Conclusion}
+\include{Sections/09_Recommendations}
+
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{bibliography}
+
+% Appendices: own page numbering per appendix (A-1, B-1, ...)
+\cleardoublepage
+\appendix
+\renewcommand{\thepage}{\thechapter-\arabic{page}}
+
+\input{Appendices/Appendix_A.tex}
+\input{Appendices/Appendix_B.tex}
+\input{Appendices/Appendix_C.tex}
+
+\end{document}
